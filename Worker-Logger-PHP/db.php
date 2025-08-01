@@ -16,6 +16,7 @@ function getLastScanTime($worker_id) {
 
 function logWorker($worker_id, &$message) {
     $db = getDB();
+    // You have to fix manually the correct time (+3 hours)
     $now = (new DateTime())->modify('+3 hours');
     $nowStr = $now->format('Y-m-d H:i:s');
     $lastScan = getLastScanTime($worker_id);
